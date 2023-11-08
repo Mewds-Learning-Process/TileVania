@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8874399700288656730}
   - component: {fileID: 5387783652800154974}
   - component: {fileID: 5924985657316412944}
-  m_Layer: 0
+  - component: {fileID: 4782525476618461578}
+  m_Layer: 8
   m_Name: Ginger (Player)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +98,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1572729455
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1064145885, guid: 998e8a19a14cb8d47b73183a43330d67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -122,7 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ff566f10eff2f459a5b9f392fbbf74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSpeed: 10
+  characterSpeed: 7
+  jumpSpeed: 20
+  climbSpeed: 5
 --- !u!50 &8874399700288656730
 Rigidbody2D:
   serializedVersion: 4
@@ -138,7 +141,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -148,7 +151,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &5387783652800154974
 CapsuleCollider2D:
@@ -159,7 +162,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4942785359185681094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 94568c19081cd6549aa73efdbbe523f3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -182,8 +185,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.036643982, y: -0.058630466}
-  m_Size: {x: 0.51629925, y: 0.88273907}
+  m_Offset: {x: -0.030460358, y: -0.058630466}
+  m_Size: {x: 0.61333084, y: 0.88273907}
   m_Direction: 0
 --- !u!114 &5924985657316412944
 MonoBehaviour:
@@ -215,3 +218,48 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!61 &4782525476618461578
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4942785359185681094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06278324, y: -0.4595459}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.41067314, y: 0.08090815}
+  m_EdgeRadius: 0

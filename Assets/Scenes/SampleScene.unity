@@ -21655,29 +21655,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2618182250840162246, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: jumpSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 4942785359185681094, guid: 79d45f93940498944a9819144ccea396, type: 3}
       propertyPath: m_Name
       value: Ginger (Player)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942785359185681094, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5387783652800154974, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 94568c19081cd6549aa73efdbbe523f3, type: 2}
-    - target: {fileID: 8874399700288656730, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: m_GravityScale
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874399700288656730, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

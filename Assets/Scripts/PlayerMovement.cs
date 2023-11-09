@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float characterSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-    Vector2 moveInput;
+    [SerializeField] UnityEngine.Vector2 deathKick = new UnityEngine.Vector2 (10f,10f);
+    UnityEngine.Vector2 moveInput;
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
@@ -46,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         
-        Vector2 climbVelocity = new Vector2 (myRigidBody.velocity.x, moveInput.y * climbSpeed);
+        UnityEngine.Vector2 climbVelocity = new UnityEngine.Vector2 (myRigidBody.velocity.x, moveInput.y * climbSpeed);
         myRigidBody.velocity = climbVelocity;
         myRigidBody.gravityScale = 0f;
 
@@ -61,14 +63,14 @@ public class PlayerMovement : MonoBehaviour
         
         if(playerHasHorizontalSpeed)
         {
-            transform.localScale = new Vector2 (Mathf.Sign(myRigidBody.velocity.x),1f);
+            transform.localScale = new UnityEngine.Vector2 (Mathf.Sign(myRigidBody.velocity.x),1f);
         }
         
     }
 
     void Run()
     {
-        Vector2 playerVelocity = new Vector2 (moveInput.x * characterSpeed, myRigidBody.velocity.y);
+        UnityEngine.Vector2 playerVelocity = new UnityEngine.Vector2 (moveInput.x * characterSpeed, myRigidBody.velocity.y);
         myRigidBody.velocity = playerVelocity;
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
@@ -78,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         if(!isAlive) {return;}
-        moveInput = value.Get<Vector2>();
+        moveInput = value.Get<UnityEngine.Vector2>();
         //Debug.Log(moveInput);
     }
 
@@ -88,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         if(!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) {return;}
         if(value.isPressed)
         {
-            myRigidBody.velocity += new Vector2 (0f, jumpSpeed);
+            myRigidBody.velocity += new UnityEngine.Vector2 (0f, jumpSpeed);
         }
     }
 
@@ -97,6 +99,8 @@ public class PlayerMovement : MonoBehaviour
         if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")))
         {
             isAlive = false;
+            myAnimator.SetTrigger("Dying");
+            myRigidBody.velocity = deathKick;
         }
     }
 }

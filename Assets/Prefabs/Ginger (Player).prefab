@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4874900686033027521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.229, y: -0.121, z: 0}
+  m_LocalPosition: {x: 0.356, y: 0.083, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -159,6 +159,8 @@ MonoBehaviour:
   jumpSpeed: 20
   climbSpeed: 5
   deathKick: {x: 0, y: 20}
+  bullet: {fileID: 5193360250243883549, guid: 3ca5918a9541a464698b93d32e482301, type: 3}
+  gun: {fileID: 6044438516518768947}
 --- !u!50 &8874399700288656730
 Rigidbody2D:
   serializedVersion: 4

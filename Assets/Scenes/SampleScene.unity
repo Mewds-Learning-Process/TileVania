@@ -1351,6 +1351,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1166987196 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6044438516518768947, guid: 79d45f93940498944a9819144ccea396, type: 3}
+  m_PrefabInstance: {fileID: 2099766317155562253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252932822
 GameObject:
   m_ObjectHideFlags: 0
@@ -22024,17 +22029,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2618182250840162246, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: deathKick.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2618182250840162246, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: deathKick.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782525476618461578, guid: 79d45f93940498944a9819144ccea396, type: 3}
-      propertyPath: m_Material
+      propertyPath: gun
       value: 
-      objectReference: {fileID: 6200000, guid: 94568c19081cd6549aa73efdbbe523f3, type: 2}
+      objectReference: {fileID: 1166987196}
+    - target: {fileID: 2618182250840162246, guid: 79d45f93940498944a9819144ccea396, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5193360250243883549, guid: 3ca5918a9541a464698b93d32e482301, type: 3}
     - target: {fileID: 4942785359185681094, guid: 79d45f93940498944a9819144ccea396, type: 3}
       propertyPath: m_Name
       value: Ginger (Player)

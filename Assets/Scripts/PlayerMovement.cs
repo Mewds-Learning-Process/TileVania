@@ -5,6 +5,7 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] UnityEngine.Vector2 deathKick = new UnityEngine.Vector2 (10f,10f);
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
     UnityEngine.Vector2 moveInput;
     Rigidbody2D myRigidBody;
     Animator myAnimator;
@@ -37,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         ClimbLadder();
         Die();
+    }
+
+    void OnFire(InputValue value)
+    {
+        if(!isAlive) {return;}
+        Instantiate(bullet, gun.position, transform.rotation);
     }
 
     void ClimbLadder()
